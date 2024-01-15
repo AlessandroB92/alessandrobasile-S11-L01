@@ -1,6 +1,7 @@
 import { Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
+
 const Job = ({ data }) => (
   <Row
     className="mx-0 mt-3 p-3"

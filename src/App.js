@@ -3,16 +3,20 @@ import './App.css'
 import MainSearch from './components/MainSearch'
 import CompanySearchResults from './components/CompanySearchResults'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import store from './reducers/store'
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<MainSearch />} />
-        <Route path="/:companyName" element={<CompanySearchResults />} />
-      </Routes>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<MainSearch />} />
+          <Route path="/:companyName" element={<CompanySearchResults />} />
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   )
 }
 
-export default App
+export default App;
